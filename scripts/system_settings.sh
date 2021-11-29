@@ -111,8 +111,8 @@ fancy_echo "Disabling auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 fancy_echo "Setting trackpad & mouse speed to a reasonable number"
-defaults write -g com.apple.trackpad.scaling 2
-defaults write -g com.apple.mouse.scaling 2.5
+defaults write -g com.apple.trackpad.scaling 4
+defaults write -g com.apple.mouse.scaling 5
 
 fancy_echo "Turn off keyboard illumination when computer is not used for 5 minutes"
 defaults write com.apple.BezelServices kDimTime -int 300
@@ -123,7 +123,7 @@ defaults write com.apple.BezelServices kDimTime -int 300
 
 fancy_echo "Requiring password immediately after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPasswordDelay -int 300
 
 fancy_echo "Enabling subpixel font rendering on non-Apple LCDs"
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
@@ -160,31 +160,26 @@ defaults write com.apple.finder FXPreferredViewStyle Clmv
 fancy_echo "Avoiding the creation of .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-fancy_echo "Disabling disk image verification"
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+# Some security options shouldn't be disabled
+# fancy_echo "Disabling disk image verification"
+#defaults write com.apple.frameworks.diskimages skip-verify -bool true
+#defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+#defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 fancy_echo "Enabling snap-to-grid for icons on the desktop and in other icon views"
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
-
-fancy_echo "Disable disk image verification"
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
-
-fancy_echo "Automatically open a new Finder window when a volume is mounted"
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+# No
+#fancy_echo "Automatically open a new Finder window when a volume is mounted"
+#defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+#defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+#defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 fancy_echo "Use list view in all Finder windows by default"
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-
 
 fancy_echo "Disable the warning before emptying the Trash"
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
@@ -200,7 +195,7 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 fancy_echo "Wipe all (default) app icons from the Dock"
 # This is only really useful when setting up a new Mac, or if you don't use
 # the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
+# defaults write com.apple.dock persistent-apps -array
 
 fancy_echo "Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate"
 defaults write com.apple.dock tilesize -int 36
@@ -209,21 +204,18 @@ fancy_echo "Speeding up Mission Control animations and grouping windows by appli
 defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.dock "expose-group-by-app" -bool true
 
-fancy_echo "Setting Dock to auto-hide and removing the auto-hiding delay"
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 0
+# NO
+# fancy_echo "Setting Dock to auto-hide and removing the auto-hiding delay"
+# defaults write com.apple.dock autohide -bool true
+# defaults write com.apple.dock autohide-delay -float 0
+# defaults write com.apple.dock autohide-time-modifier -float 0
 
-fancy_echo "Enable spring loading for all Dock items"
-defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+# No
+#fancy_echo "Enable spring loading for all Dock items"
+#defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 fancy_echo "Show indicator lights for open applications in the Dock"
 defaults write com.apple.dock show-process-indicators -bool true
-
-fancy_echo "Wipe all (default) app icons from the Dock"
-# This is only really useful when setting up a new Mac, or if you don't use
-# the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
 
 fancy_echo "Don't animate opening applications from the Dock"
 defaults write com.apple.dock launchanim -bool false
@@ -234,26 +226,24 @@ defaults write com.apple.dock showhidden -bool true
 fancy_echo "Speed up Mission Control animations"
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
-fancy_echo "Don't group windows by application in Mission Control"
-fancy_echo "(i.e. use the old Expose behavior instead)"
-defaults write com.apple.dock expose-group-by-app -bool false
+# fancy_echo "Don't group windows by application in Mission Control"
+# fancy_echo "(i.e. use the old Expose behavior instead)"
+# defaults write com.apple.dock expose-group-by-app -bool false
 
-fancy_echo "Disable Dashboard"
-defaults write com.apple.dashboard mcx-disabled -bool true
+# fancy_echo "Disable Dashboard"
+# defaults write com.apple.dashboard mcx-disabled -bool true
 
-fancy_echo "Don't show Dashboard as a Space"
-defaults write com.apple.dock dashboard-in-overlay -bool true
+#fancy_echo "Don't show Dashboard as a Space"
+#defaults write com.apple.dock dashboard-in-overlay -bool true
 
 fancy_echo "Don't automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false
 
 
-
-
 ###############################################################################
 # Safari & WebKit
 ###############################################################################
-
+# Safari is crap so I'm going to leave these settings. 
 fancy_echo "Hiding Safari's bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 
@@ -299,10 +289,10 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 fancy_echo "Enabling UTF-8 ONLY in Terminal.app and setting the Pro theme by default"
 defaults write com.apple.terminal StringEncodings -array 4
 
-# echo ""
-# echo "Terminal.app: setting the Pro theme by default"
-# defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
-# defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+echo ""
+echo "Terminal.app: setting the Pro theme by default"
+defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
+defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 
 ###############################################################################
 # Time Machine
@@ -319,8 +309,8 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 # Messages                                                                    #
 ###############################################################################
 
-fancy_echo "Disable automatic emoji substitution (i.e. use plain text smileys)"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+#fancy_echo "Disable automatic emoji substitution (i.e. use plain text smileys)"
+#defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 fancy_echo "Disable smart quotes as it's annoying for messages that contain code"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
@@ -350,13 +340,13 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # Personal Additions
 ###############################################################################
 
-# echo ""
-# echo "Disable hibernation (speeds up entering sleep mode)"
-# sudo pmset -a hibernatemode 0
+#echo ""
+#echo "Disable hibernation (speeds up entering sleep mode)"
+#sudo pmset -a hibernatemode 0
 
-# echo ""
-# echo "Remove the sleep image file to save disk space"
-# sudo rm /Private/var/vm/sleepimage
+#echo ""
+#echo "Remove the sleep image file to save disk space"
+#sudo rm /Private/var/vm/sleepimage
 # echo "Creating a zero-byte file insteadâ€¦"
 # sudo touch /Private/var/vm/sleepimage
 # echo "â€¦and make sure it can't be rewritten"
@@ -381,11 +371,8 @@ fancy_echo "Use the system-native print preview dialog in Chrome"
 defaults write com.google.Chrome DisablePrintPreview -bool true
 defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 
-
 fancy_echo "Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
-
-
 
 ###############################################################################
 # Kill affected applications
