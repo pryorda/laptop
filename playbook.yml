@@ -81,13 +81,13 @@
     ### APPZ
 
     - name: Check for installed apps(casks)
-      shell: brew cask list | grep {{ item }}
+      shell: brew list --cask | grep {{ item }}
       register: installed_applications
       with_items: applications
       ignore_errors: true
     
     - name: Install Apps with brew-cask
-      shell: brew cask install {{ item }}
+      shell: brew install --cask {{ item }}
       with_items: applications
       when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
 
