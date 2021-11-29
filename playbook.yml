@@ -101,7 +101,7 @@
 
     - name: Configure System Settings
       script: scripts/system_settings.sh
-      sudo: true
+      become: true
 
     # ### DOTFILES
 
