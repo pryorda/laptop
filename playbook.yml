@@ -39,6 +39,7 @@
       - coreutils # Install GNU core utilities (those that come with OS X are outdated)
       - docker # | https://docs.docker.com/installation/mac/
       - findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+      - eul
       - gh
       - git
       - go
