@@ -80,7 +80,7 @@
     - name: Install Apps with brew-cask
       shell: brew install --cask {{ item }}
       loop: "{{ applications }}"
-      when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
+      when: item not in installed_applications.results|map(attribute='stdout')
 
     - name: Install oh-my-zsh
       git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
