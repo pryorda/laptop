@@ -44,7 +44,7 @@ fi
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
+  sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 else
   fancy_echo "Homebrew already installed. Skipping."
 fi
@@ -52,7 +52,7 @@ fi
 # [Install Ansible](http://docs.ansible.com/intro_installation.html).
 if ! command -v ansible >/dev/null; then
   fancy_echo "Installing Ansible ..."
-  brew install ansible 
+  brew install ansible --force
 else
   fancy_echo "Ansible already installed. Skipping."
 fi
