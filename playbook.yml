@@ -9,11 +9,9 @@
       - docker
       - dropbox # a worse Mega Sync
       - eul
-      - eve # learn your shortcuts
       - firefox 
       - google-chrome
       - keybase
-      - kryptco/tap/kr
       #- little-snitch # awesome outbound firewall
       - monolingual # remove unneeded osx lang files
       - qlcolorcode # quick look syntax highlighting
@@ -21,12 +19,12 @@
       - qlmarkdown # quick look .md files
       - qlstephen # quick look extension-less text files
       - rowanj-gitx # Awesome gitx fork.
-      - torbrowser # be the noise
+      - tor-browser # be the noise
       - vagrant # | https://www.vagrantup.com/downloads.html
       - vagrant-manager # 
       - virtualbox # | https://www.virtualbox.org/
       - vlc 
-      - zoomus # better videoconferences
+      - zoom # better videoconferences
 
     install_oh_my_zsh:  true
 
@@ -47,6 +45,7 @@
       - go
       - gpg
       - hub # github
+      - kryptco/tap/kr
       - mtr # better traceroute
       - packer
       - rsync
