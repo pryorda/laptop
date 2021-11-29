@@ -20,7 +20,7 @@ We've tested it on;
 
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/siyelo/laptop/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/pryorda/laptop/master/install.sh)"
 
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
