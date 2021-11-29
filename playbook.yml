@@ -8,6 +8,7 @@
       - disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
       - docker
       - dropbox # a worse Mega Sync
+      - eul
       - eve # learn your shortcuts
       - firefox 
       - google-chrome
@@ -39,7 +40,6 @@
       - cowsay # amazing
       - coreutils # Install GNU core utilities (those that come with OS X are outdated)
       - findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-      - eul
       - gh
       - git
       - go
