@@ -14,7 +14,7 @@
       - google-chrome
       - keybase
       - kryptco/tap/kr
-      - little-snitch # awesome outbound firewall
+      #- little-snitch # awesome outbound firewall
       - monolingual # remove unneeded osx lang files
       - qlcolorcode # quick look syntax highlighting
       - qlimagesize # quick look image dimensions
