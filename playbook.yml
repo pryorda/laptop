@@ -148,6 +148,7 @@
     #  shell: open /opt/homebrew-cask/Caskroom/little-snitch/3.5.3/Little\ Snitch\ Installer.app
     #  when: "'little-snitch' in applications"
 
-    - name: Run Monolingual
-      shell: open ~/Applications/Monolingual.app
-      when: "'monolingual' in applications"
+    # TODO: RunOnce
+    # - name: Run Monolingual
+    #  shell: open /Applications/Monolingual.app
+    #  when: "'monolingual' in applications"
